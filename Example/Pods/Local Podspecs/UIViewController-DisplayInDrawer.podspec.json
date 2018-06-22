@@ -1,0 +1,22 @@
+{
+  "name": "UIViewController-DisplayInDrawer",
+  "version": "0.1.0",
+  "summary": "A short description of UIViewController-DisplayInDrawer.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/vilemkurz/UIViewController-DisplayInDrawer",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "vilemkurz": "vilem.kurz@cocoaminers.com"
+  },
+  "source": {
+    "git": "https://github.com/vilemkurz/UIViewController-DisplayInDrawer.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "UIViewController-DisplayInDrawer/Classes/**/*"
+}

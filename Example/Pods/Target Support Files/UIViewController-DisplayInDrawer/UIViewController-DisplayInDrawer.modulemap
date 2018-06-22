@@ -1,0 +1,6 @@
+framework module UIViewController_DisplayInDrawer {
+  umbrella header "UIViewController-DisplayInDrawer-umbrella.h"
+
+  export *
+  module * { export * }
+}
