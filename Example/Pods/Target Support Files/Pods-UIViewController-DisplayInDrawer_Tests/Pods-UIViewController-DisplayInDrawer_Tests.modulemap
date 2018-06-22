@@ -1,6 +1,0 @@
-framework module Pods_UIViewController_DisplayInDrawer_Tests {
-  umbrella header "Pods-UIViewController-DisplayInDrawer_Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}

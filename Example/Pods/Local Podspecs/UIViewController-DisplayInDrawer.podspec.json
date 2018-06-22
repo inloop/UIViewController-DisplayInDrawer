@@ -9,14 +9,14 @@
     "file": "LICENSE"
   },
   "authors": {
-    "vilemkurz": "vilem.kurz@cocoaminers.com"
+    "vilemkurz": "vilem.kurz@inloopx.com"
   },
   "source": {
-    "git": "https://github.com/vilemkurz/UIViewController-DisplayInDrawer.git",
+    "git": "https://github.com/inloop/UIViewController-DisplayInDrawer.git",
     "tag": "0.1.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "10.0"
   },
   "source_files": "UIViewController-DisplayInDrawer/Classes/**/*"
 }

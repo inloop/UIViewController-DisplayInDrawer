@@ -1,11 +1,6 @@
+platform :ios, '10.0'
 use_frameworks!
 
 target 'UIViewController-DisplayInDrawer_Example' do
   pod 'UIViewController-DisplayInDrawer', :path => '../'
-
-  target 'UIViewController-DisplayInDrawer_Tests' do
-    inherit! :search_paths
-
-    
-  end
 end

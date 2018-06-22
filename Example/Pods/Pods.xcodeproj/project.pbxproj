@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0D9A1E70597BC9FB32C4A723A5B58AF2 /* UIViewController-DisplayInDrawer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 22AE86C56562E1FF03D3697B77C77A18 /* UIViewController-DisplayInDrawer-dummy.m */; };
-		15F17A37A275CE6E1ECEDCB64F5CE1FC /* Pods-UIViewController-DisplayInDrawer_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DF6D817ED43E389DDAFA010E7B79B768 /* Pods-UIViewController-DisplayInDrawer_Tests-dummy.m */; };
-		1E8A5C1B72552B9D684080FF7522F663 /* ReplaceMe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5210E5293408DB2BF8D761760ECF59C5 /* ReplaceMe.swift */; };
-		26F7C5265B72A1F8D1891D1A5681846E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		329B4B4C044412FE6796D70DF1E4892F /* Pods-UIViewController-DisplayInDrawer_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CA6FBF10FCC9D11354B30ABA8248367F /* Pods-UIViewController-DisplayInDrawer_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		339099367242115FBE944BC8AB91D254 /* UIViewController-DisplayInDrawer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 05B4B5BD31B27FD70B74080609185504 /* UIViewController-DisplayInDrawer-dummy.m */; };
+		3E9C73091C784E7934801C4698976A3B /* dLog.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3E69586594216D5EF410209A5FC5FB8 /* dLog.swift */; };
+		4325F1382064AD794D00882CC3FBD874 /* UIView+PinSubview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020BDDEE4DDFEE7C1D26BBE44708ABAD /* UIView+PinSubview.swift */; };
+		7D7EBD365290ABD3947550516BA6DF80 /* PanGestureTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2CC2347FEB61866B5CE71A6AE10E1 /* PanGestureTarget.swift */; };
 		A4C5E6E30FD6FA32F2F7786F23F84466 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
 		EC6970EC3330EB54B4B894B9216AFC69 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */; };
-		EF137A03BF4364BB0E7169201A765B39 /* Pods-UIViewController-DisplayInDrawer_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 222DF4B08A4EEF3CDA79E33232024818 /* Pods-UIViewController-DisplayInDrawer_Example-dummy.m */; };
-		EFC00BA11C0C87A9ED33F9908DCB7B53 /* Pods-UIViewController-DisplayInDrawer_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C8FE368A4869B5F7C1A245EAFCA53CFB /* Pods-UIViewController-DisplayInDrawer_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F1356934FE2AC3385BAD787465D84AF7 /* UIViewController-DisplayInDrawer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 38C48FA3422F56782A81042410E783D2 /* UIViewController-DisplayInDrawer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EF137A03BF4364BB0E7169201A765B39 /* Pods-UIViewController-DisplayInDrawer_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0C5FE9A92A22FD59396229E677DE4 /* Pods-UIViewController-DisplayInDrawer_Example-dummy.m */; };
+		EFC00BA11C0C87A9ED33F9908DCB7B53 /* Pods-UIViewController-DisplayInDrawer_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D14E687ED179DBDA5DCB6EB82973FB69 /* Pods-UIViewController-DisplayInDrawer_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F1356934FE2AC3385BAD787465D84AF7 /* UIViewController-DisplayInDrawer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = CDD0039D73C2CB948EE7D84D166034AE /* UIViewController-DisplayInDrawer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F9FBAA85E592E90B78C6F0229004BAC8 /* UIViewController+PresentDrawerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED18B9793EEE76A3BCFF0005E22ED7D /* UIViewController+PresentDrawerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,51 +27,36 @@
 			remoteGlobalIDString = 7CC9934A479AC70CBD5459E6AEBF00A2;
 			remoteInfo = "UIViewController-DisplayInDrawer";
 		};
-		43FE2C8FEE9E181A9135709AC8ED2E7E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = D0EDC1335C965ACC186A22FAC33EE452;
-			remoteInfo = "Pods-UIViewController-DisplayInDrawer_Example";
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0ACD3D7A946D72C02F847E3F940CE7CB /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0CED285CA39D2DB0604E34D4615E871E /* Pods-UIViewController-DisplayInDrawer_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UIViewController-DisplayInDrawer_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
-		13137A48AB889AC938EBA7354486AE4E /* Pods-UIViewController-DisplayInDrawer_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UIViewController-DisplayInDrawer_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		217BC21A9FEBD170A54B5ACAF89B8EA6 /* Pods_UIViewController_DisplayInDrawer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_UIViewController_DisplayInDrawer_Example.framework; path = "Pods-UIViewController-DisplayInDrawer_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		222DF4B08A4EEF3CDA79E33232024818 /* Pods-UIViewController-DisplayInDrawer_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UIViewController-DisplayInDrawer_Example-dummy.m"; sourceTree = "<group>"; };
-		22AE86C56562E1FF03D3697B77C77A18 /* UIViewController-DisplayInDrawer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController-DisplayInDrawer-dummy.m"; sourceTree = "<group>"; };
-		22F6E25A90ED3E372B5C81611E010B6A /* Pods-UIViewController-DisplayInDrawer_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UIViewController-DisplayInDrawer_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		2B0676157EFD578CA6FAFABE6C6D4BD7 /* Pods_UIViewController_DisplayInDrawer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_UIViewController_DisplayInDrawer_Tests.framework; path = "Pods-UIViewController-DisplayInDrawer_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2E1642F5AEC467F0E1B45C33D202AF7D /* UIViewController-DisplayInDrawer.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = "UIViewController-DisplayInDrawer.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		36E2D5B08CE8D9B6F269CF1581D3BE1F /* Pods-UIViewController-DisplayInDrawer_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-UIViewController-DisplayInDrawer_Example-frameworks.sh"; sourceTree = "<group>"; };
-		38C48FA3422F56782A81042410E783D2 /* UIViewController-DisplayInDrawer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController-DisplayInDrawer-umbrella.h"; sourceTree = "<group>"; };
-		5210E5293408DB2BF8D761760ECF59C5 /* ReplaceMe.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReplaceMe.swift; path = "UIViewController-DisplayInDrawer/Classes/ReplaceMe.swift"; sourceTree = "<group>"; };
-		5376A025019DE3F33D0F10F328D610E9 /* UIViewController-DisplayInDrawer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController-DisplayInDrawer-prefix.pch"; sourceTree = "<group>"; };
-		56AFB0C99818E6E012808FBB15F9E646 /* Pods-UIViewController-DisplayInDrawer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UIViewController-DisplayInDrawer_Example.release.xcconfig"; sourceTree = "<group>"; };
+		020BDDEE4DDFEE7C1D26BBE44708ABAD /* UIView+PinSubview.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+PinSubview.swift"; path = "UIViewController-DisplayInDrawer/Classes/UIView+PinSubview.swift"; sourceTree = "<group>"; };
+		05B4B5BD31B27FD70B74080609185504 /* UIViewController-DisplayInDrawer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "UIViewController-DisplayInDrawer-dummy.m"; sourceTree = "<group>"; };
+		0EF64D1A6B49911280ADCEB87B4D4603 /* UIViewController_DisplayInDrawer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = UIViewController_DisplayInDrawer.framework; path = "UIViewController-DisplayInDrawer.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		115C7F4C5639653117EDBACBFEB66FCB /* UIViewController-DisplayInDrawer.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = "UIViewController-DisplayInDrawer.podspec"; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		17C2CC2347FEB61866B5CE71A6AE10E1 /* PanGestureTarget.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PanGestureTarget.swift; path = "UIViewController-DisplayInDrawer/Classes/PanGestureTarget.swift"; sourceTree = "<group>"; };
+		3167B9C9AA450784EFC592C901BBDD0F /* Pods-UIViewController-DisplayInDrawer_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-UIViewController-DisplayInDrawer_Example.modulemap"; sourceTree = "<group>"; };
+		31C50462E835732F02E73490C7861CBA /* UIViewController-DisplayInDrawer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "UIViewController-DisplayInDrawer.xcconfig"; sourceTree = "<group>"; };
+		332C82C8AEC844CE1A7CA7F96E455CFF /* Pods-UIViewController-DisplayInDrawer_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-UIViewController-DisplayInDrawer_Example-resources.sh"; sourceTree = "<group>"; };
 		5A16F4CFC63FAC439D7A04994F579A03 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		6940E1ABD9616E156EF1281AFAA4B8D8 /* UIViewController_DisplayInDrawer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = UIViewController_DisplayInDrawer.framework; path = "UIViewController-DisplayInDrawer.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B8757F2E222E0D12AD192BD5DA38B11 /* UIViewController-DisplayInDrawer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "UIViewController-DisplayInDrawer.modulemap"; sourceTree = "<group>"; };
-		83FA11B65967A588A9E242C67000EC03 /* Pods-UIViewController-DisplayInDrawer_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-UIViewController-DisplayInDrawer_Example-resources.sh"; sourceTree = "<group>"; };
-		8E44953D97B6F1A8A83D7B26E0BFFE34 /* Pods-UIViewController-DisplayInDrawer_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-UIViewController-DisplayInDrawer_Tests.modulemap"; sourceTree = "<group>"; };
+		87580B495BDE839A14036EB37308CD99 /* Pods-UIViewController-DisplayInDrawer_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-UIViewController-DisplayInDrawer_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		88BB3F62B8998B8A3D33689B638CBE58 /* Pods-UIViewController-DisplayInDrawer_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-UIViewController-DisplayInDrawer_Example-frameworks.sh"; sourceTree = "<group>"; };
+		8B129930DE9DFE1E4C580F0A23416267 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BE0C5FE9A92A22FD59396229E677DE4 /* Pods-UIViewController-DisplayInDrawer_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UIViewController-DisplayInDrawer_Example-dummy.m"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9754E107E2DC08209B780A1B2E18A62C /* Pods-UIViewController-DisplayInDrawer_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-UIViewController-DisplayInDrawer_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9CE4868EC794C73BA926345E126D5280 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
-		A48B6099D7E1BFB77BBD56661AE9AC65 /* Pods-UIViewController-DisplayInDrawer_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-UIViewController-DisplayInDrawer_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		A51520AE26BF44A6E21FEC4F193D42B2 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		AC6E2EE5EB2C2372D1466EBA7250D3E2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B4228943E6135A96FB2932E9F04EE409 /* UIViewController-DisplayInDrawer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "UIViewController-DisplayInDrawer.xcconfig"; sourceTree = "<group>"; };
-		C7934AA07BAECE7EB5F4E08D58F4BB1D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C8FE368A4869B5F7C1A245EAFCA53CFB /* Pods-UIViewController-DisplayInDrawer_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-UIViewController-DisplayInDrawer_Example-umbrella.h"; sourceTree = "<group>"; };
-		CA6FBF10FCC9D11354B30ABA8248367F /* Pods-UIViewController-DisplayInDrawer_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-UIViewController-DisplayInDrawer_Tests-umbrella.h"; sourceTree = "<group>"; };
-		D53B61BE2DC82D3385329E3BFF422095 /* Pods-UIViewController-DisplayInDrawer_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UIViewController-DisplayInDrawer_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		DF6D817ED43E389DDAFA010E7B79B768 /* Pods-UIViewController-DisplayInDrawer_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-UIViewController-DisplayInDrawer_Tests-dummy.m"; sourceTree = "<group>"; };
-		DF94B5C875B87757F466EB17AD243826 /* Pods-UIViewController-DisplayInDrawer_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-UIViewController-DisplayInDrawer_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		E05B2F5D9143A5261C2D62155F7702CF /* Pods-UIViewController-DisplayInDrawer_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UIViewController-DisplayInDrawer_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		E5F22A0CC5ABEC2D2423228EE1BD5028 /* Pods-UIViewController-DisplayInDrawer_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-UIViewController-DisplayInDrawer_Tests-resources.sh"; sourceTree = "<group>"; };
-		E7F38357067BB3AF4B8F4C9D5CD20E80 /* Pods-UIViewController-DisplayInDrawer_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-UIViewController-DisplayInDrawer_Example.modulemap"; sourceTree = "<group>"; };
+		9ED18B9793EEE76A3BCFF0005E22ED7D /* UIViewController+PresentDrawerController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+PresentDrawerController.swift"; path = "UIViewController-DisplayInDrawer/Classes/UIViewController+PresentDrawerController.swift"; sourceTree = "<group>"; };
+		A21DA83573DDDBFE5D0A653510032F01 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		A3E69586594216D5EF410209A5FC5FB8 /* dLog.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = dLog.swift; path = "UIViewController-DisplayInDrawer/Classes/dLog.swift"; sourceTree = "<group>"; };
+		CB2FD971FBD77CE7A152EC39803A5E88 /* UIViewController-DisplayInDrawer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "UIViewController-DisplayInDrawer.modulemap"; sourceTree = "<group>"; };
+		CD4486E6FD541C3F0207DF8B4FC5574D /* UIViewController-DisplayInDrawer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController-DisplayInDrawer-prefix.pch"; sourceTree = "<group>"; };
+		CDD0039D73C2CB948EE7D84D166034AE /* UIViewController-DisplayInDrawer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIViewController-DisplayInDrawer-umbrella.h"; sourceTree = "<group>"; };
+		D14E687ED179DBDA5DCB6EB82973FB69 /* Pods-UIViewController-DisplayInDrawer_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-UIViewController-DisplayInDrawer_Example-umbrella.h"; sourceTree = "<group>"; };
+		F1E5B49FB2225803D444D55902A42DE8 /* Pods-UIViewController-DisplayInDrawer_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-UIViewController-DisplayInDrawer_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		F2C261B6F9801F71B2C0432D035693EF /* Pods_UIViewController_DisplayInDrawer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_UIViewController_DisplayInDrawer_Example.framework; path = "Pods-UIViewController-DisplayInDrawer_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F530DC58CAEAB7EC7A590BC5E4ADDE28 /* Pods-UIViewController-DisplayInDrawer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UIViewController-DisplayInDrawer_Example.release.xcconfig"; sourceTree = "<group>"; };
+		F74DA1184651522C085E95A9B9D6BD24 /* Pods-UIViewController-DisplayInDrawer_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-UIViewController-DisplayInDrawer_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		F8644EFB637681F986A697DB87DC083D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD9CC5CC23B8B399BA7F179689E93645 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,63 +76,45 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FA08CC9ED3B9239785348543C0E28C30 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				26F7C5265B72A1F8D1891D1A5681846E /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		129E62B2C0B48D783155E57ACF8F817A /* Products */ = {
+		0C21BB581CAC09B9F45103655DF5CAB7 /* UIViewController-DisplayInDrawer */ = {
 			isa = PBXGroup;
 			children = (
-				217BC21A9FEBD170A54B5ACAF89B8EA6 /* Pods_UIViewController_DisplayInDrawer_Example.framework */,
-				2B0676157EFD578CA6FAFABE6C6D4BD7 /* Pods_UIViewController_DisplayInDrawer_Tests.framework */,
-				6940E1ABD9616E156EF1281AFAA4B8D8 /* UIViewController_DisplayInDrawer.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		46FC729A4B38484771BE8859E6390E91 /* UIViewController-DisplayInDrawer */ = {
-			isa = PBXGroup;
-			children = (
-				5210E5293408DB2BF8D761760ECF59C5 /* ReplaceMe.swift */,
-				D0D752A657A41FD230C82068A420CBA6 /* Pod */,
-				7A9CCDC837A10CAA599EA06EA6737C64 /* Support Files */,
+				A3E69586594216D5EF410209A5FC5FB8 /* dLog.swift */,
+				17C2CC2347FEB61866B5CE71A6AE10E1 /* PanGestureTarget.swift */,
+				020BDDEE4DDFEE7C1D26BBE44708ABAD /* UIView+PinSubview.swift */,
+				9ED18B9793EEE76A3BCFF0005E22ED7D /* UIViewController+PresentDrawerController.swift */,
+				2783977F9A892FDFF6D7427D0D641986 /* Pod */,
+				35924EB54B5ACBCC9A4D9CA79D8C8AFA /* Support Files */,
 			);
 			name = "UIViewController-DisplayInDrawer";
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		4BEF15879195BCF451BA0CED3DAB2D38 /* Pods-UIViewController-DisplayInDrawer_Tests */ = {
+		2783977F9A892FDFF6D7427D0D641986 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				0ACD3D7A946D72C02F847E3F940CE7CB /* Info.plist */,
-				8E44953D97B6F1A8A83D7B26E0BFFE34 /* Pods-UIViewController-DisplayInDrawer_Tests.modulemap */,
-				9754E107E2DC08209B780A1B2E18A62C /* Pods-UIViewController-DisplayInDrawer_Tests-acknowledgements.markdown */,
-				0CED285CA39D2DB0604E34D4615E871E /* Pods-UIViewController-DisplayInDrawer_Tests-acknowledgements.plist */,
-				DF6D817ED43E389DDAFA010E7B79B768 /* Pods-UIViewController-DisplayInDrawer_Tests-dummy.m */,
-				A48B6099D7E1BFB77BBD56661AE9AC65 /* Pods-UIViewController-DisplayInDrawer_Tests-frameworks.sh */,
-				E5F22A0CC5ABEC2D2423228EE1BD5028 /* Pods-UIViewController-DisplayInDrawer_Tests-resources.sh */,
-				CA6FBF10FCC9D11354B30ABA8248367F /* Pods-UIViewController-DisplayInDrawer_Tests-umbrella.h */,
-				E05B2F5D9143A5261C2D62155F7702CF /* Pods-UIViewController-DisplayInDrawer_Tests.debug.xcconfig */,
-				22F6E25A90ED3E372B5C81611E010B6A /* Pods-UIViewController-DisplayInDrawer_Tests.release.xcconfig */,
+				FD9CC5CC23B8B399BA7F179689E93645 /* LICENSE */,
+				A21DA83573DDDBFE5D0A653510032F01 /* README.md */,
+				115C7F4C5639653117EDBACBFEB66FCB /* UIViewController-DisplayInDrawer.podspec */,
 			);
-			name = "Pods-UIViewController-DisplayInDrawer_Tests";
-			path = "Target Support Files/Pods-UIViewController-DisplayInDrawer_Tests";
+			name = Pod;
 			sourceTree = "<group>";
 		};
-		5D855A42527866FB4217DFC4C1F56ED9 /* Targets Support Files */ = {
+		35924EB54B5ACBCC9A4D9CA79D8C8AFA /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				7784283F67D6671BE86EE82A8A2F61A8 /* Pods-UIViewController-DisplayInDrawer_Example */,
-				4BEF15879195BCF451BA0CED3DAB2D38 /* Pods-UIViewController-DisplayInDrawer_Tests */,
+				8B129930DE9DFE1E4C580F0A23416267 /* Info.plist */,
+				CB2FD971FBD77CE7A152EC39803A5E88 /* UIViewController-DisplayInDrawer.modulemap */,
+				31C50462E835732F02E73490C7861CBA /* UIViewController-DisplayInDrawer.xcconfig */,
+				05B4B5BD31B27FD70B74080609185504 /* UIViewController-DisplayInDrawer-dummy.m */,
+				CD4486E6FD541C3F0207DF8B4FC5574D /* UIViewController-DisplayInDrawer-prefix.pch */,
+				CDD0039D73C2CB948EE7D84D166034AE /* UIViewController-DisplayInDrawer-umbrella.h */,
 			);
-			name = "Targets Support Files";
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/UIViewController-DisplayInDrawer";
 			sourceTree = "<group>";
 		};
 		5E0D919E635D23B70123790B8308F8EF /* iOS */ = {
@@ -158,46 +125,39 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		7784283F67D6671BE86EE82A8A2F61A8 /* Pods-UIViewController-DisplayInDrawer_Example */ = {
+		624028D6AF4BA8CFDDFF103F13807817 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				AC6E2EE5EB2C2372D1466EBA7250D3E2 /* Info.plist */,
-				E7F38357067BB3AF4B8F4C9D5CD20E80 /* Pods-UIViewController-DisplayInDrawer_Example.modulemap */,
-				DF94B5C875B87757F466EB17AD243826 /* Pods-UIViewController-DisplayInDrawer_Example-acknowledgements.markdown */,
-				D53B61BE2DC82D3385329E3BFF422095 /* Pods-UIViewController-DisplayInDrawer_Example-acknowledgements.plist */,
-				222DF4B08A4EEF3CDA79E33232024818 /* Pods-UIViewController-DisplayInDrawer_Example-dummy.m */,
-				36E2D5B08CE8D9B6F269CF1581D3BE1F /* Pods-UIViewController-DisplayInDrawer_Example-frameworks.sh */,
-				83FA11B65967A588A9E242C67000EC03 /* Pods-UIViewController-DisplayInDrawer_Example-resources.sh */,
-				C8FE368A4869B5F7C1A245EAFCA53CFB /* Pods-UIViewController-DisplayInDrawer_Example-umbrella.h */,
-				13137A48AB889AC938EBA7354486AE4E /* Pods-UIViewController-DisplayInDrawer_Example.debug.xcconfig */,
-				56AFB0C99818E6E012808FBB15F9E646 /* Pods-UIViewController-DisplayInDrawer_Example.release.xcconfig */,
+				F1BEB2C340E6B6BB31FAC2EE6E430C6D /* Pods-UIViewController-DisplayInDrawer_Example */,
 			);
-			name = "Pods-UIViewController-DisplayInDrawer_Example";
-			path = "Target Support Files/Pods-UIViewController-DisplayInDrawer_Example";
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		7A9CCDC837A10CAA599EA06EA6737C64 /* Support Files */ = {
+		630D0932B3C81F755EC613B0FB2C0E11 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C7934AA07BAECE7EB5F4E08D58F4BB1D /* Info.plist */,
-				6B8757F2E222E0D12AD192BD5DA38B11 /* UIViewController-DisplayInDrawer.modulemap */,
-				B4228943E6135A96FB2932E9F04EE409 /* UIViewController-DisplayInDrawer.xcconfig */,
-				22AE86C56562E1FF03D3697B77C77A18 /* UIViewController-DisplayInDrawer-dummy.m */,
-				5376A025019DE3F33D0F10F328D610E9 /* UIViewController-DisplayInDrawer-prefix.pch */,
-				38C48FA3422F56782A81042410E783D2 /* UIViewController-DisplayInDrawer-umbrella.h */,
+				F2C261B6F9801F71B2C0432D035693EF /* Pods_UIViewController_DisplayInDrawer_Example.framework */,
+				0EF64D1A6B49911280ADCEB87B4D4603 /* UIViewController_DisplayInDrawer.framework */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/UIViewController-DisplayInDrawer";
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7B9202864C37E1F0354B82581B909184 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0C21BB581CAC09B9F45103655DF5CAB7 /* UIViewController-DisplayInDrawer */,
+			);
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				F806E71193DAC31597ECE0CC7583EDC8 /* Development Pods */,
+				7B9202864C37E1F0354B82581B909184 /* Development Pods */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				129E62B2C0B48D783155E57ACF8F817A /* Products */,
-				5D855A42527866FB4217DFC4C1F56ED9 /* Targets Support Files */,
+				630D0932B3C81F755EC613B0FB2C0E11 /* Products */,
+				624028D6AF4BA8CFDDFF103F13807817 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -209,22 +169,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D0D752A657A41FD230C82068A420CBA6 /* Pod */ = {
+		F1BEB2C340E6B6BB31FAC2EE6E430C6D /* Pods-UIViewController-DisplayInDrawer_Example */ = {
 			isa = PBXGroup;
 			children = (
-				A51520AE26BF44A6E21FEC4F193D42B2 /* LICENSE */,
-				9CE4868EC794C73BA926345E126D5280 /* README.md */,
-				2E1642F5AEC467F0E1B45C33D202AF7D /* UIViewController-DisplayInDrawer.podspec */,
+				F8644EFB637681F986A697DB87DC083D /* Info.plist */,
+				3167B9C9AA450784EFC592C901BBDD0F /* Pods-UIViewController-DisplayInDrawer_Example.modulemap */,
+				87580B495BDE839A14036EB37308CD99 /* Pods-UIViewController-DisplayInDrawer_Example-acknowledgements.markdown */,
+				F1E5B49FB2225803D444D55902A42DE8 /* Pods-UIViewController-DisplayInDrawer_Example-acknowledgements.plist */,
+				8BE0C5FE9A92A22FD59396229E677DE4 /* Pods-UIViewController-DisplayInDrawer_Example-dummy.m */,
+				88BB3F62B8998B8A3D33689B638CBE58 /* Pods-UIViewController-DisplayInDrawer_Example-frameworks.sh */,
+				332C82C8AEC844CE1A7CA7F96E455CFF /* Pods-UIViewController-DisplayInDrawer_Example-resources.sh */,
+				D14E687ED179DBDA5DCB6EB82973FB69 /* Pods-UIViewController-DisplayInDrawer_Example-umbrella.h */,
+				F74DA1184651522C085E95A9B9D6BD24 /* Pods-UIViewController-DisplayInDrawer_Example.debug.xcconfig */,
+				F530DC58CAEAB7EC7A590BC5E4ADDE28 /* Pods-UIViewController-DisplayInDrawer_Example.release.xcconfig */,
 			);
-			name = Pod;
-			sourceTree = "<group>";
-		};
-		F806E71193DAC31597ECE0CC7583EDC8 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				46FC729A4B38484771BE8859E6390E91 /* UIViewController-DisplayInDrawer */,
-			);
-			name = "Development Pods";
+			name = "Pods-UIViewController-DisplayInDrawer_Example";
+			path = "Target Support Files/Pods-UIViewController-DisplayInDrawer_Example";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,40 +206,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E847CDBC11A7F533F0300F171EE6A5E2 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				329B4B4C044412FE6796D70DF1E4892F /* Pods-UIViewController-DisplayInDrawer_Tests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		5CC4FA74D6EAD4AECE0A7B92907742DE /* Pods-UIViewController-DisplayInDrawer_Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E135D30C3314CC64F45E6C5D026A041C /* Build configuration list for PBXNativeTarget "Pods-UIViewController-DisplayInDrawer_Tests" */;
-			buildPhases = (
-				E43500043B2C841501A6A60868D30C35 /* Sources */,
-				FA08CC9ED3B9239785348543C0E28C30 /* Frameworks */,
-				E847CDBC11A7F533F0300F171EE6A5E2 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A556C8F74F9AA2E0D65BF212136E03C4 /* PBXTargetDependency */,
-			);
-			name = "Pods-UIViewController-DisplayInDrawer_Tests";
-			productName = "Pods-UIViewController-DisplayInDrawer_Tests";
-			productReference = 2B0676157EFD578CA6FAFABE6C6D4BD7 /* Pods_UIViewController_DisplayInDrawer_Tests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 		7CC9934A479AC70CBD5459E6AEBF00A2 /* UIViewController-DisplayInDrawer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13DAF7B6487F3632B93992581F03B99D /* Build configuration list for PBXNativeTarget "UIViewController-DisplayInDrawer" */;
 			buildPhases = (
-				E17BC55343F8B711B5FB77E524D2FE92 /* Sources */,
+				E2C89C055BA1745051AEC949065B8C79 /* Sources */,
 				19FEA4551EF4E91A237ABCB7C633595E /* Frameworks */,
 				6FFADFBFF1310FC2F0434D2336EDF826 /* Headers */,
 			);
@@ -289,7 +223,7 @@
 			);
 			name = "UIViewController-DisplayInDrawer";
 			productName = "UIViewController-DisplayInDrawer";
-			productReference = 6940E1ABD9616E156EF1281AFAA4B8D8 /* UIViewController_DisplayInDrawer.framework */;
+			productReference = 0EF64D1A6B49911280ADCEB87B4D4603 /* UIViewController_DisplayInDrawer.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		D0EDC1335C965ACC186A22FAC33EE452 /* Pods-UIViewController-DisplayInDrawer_Example */ = {
@@ -307,7 +241,7 @@
 			);
 			name = "Pods-UIViewController-DisplayInDrawer_Example";
 			productName = "Pods-UIViewController-DisplayInDrawer_Example";
-			productReference = 217BC21A9FEBD170A54B5ACAF89B8EA6 /* Pods_UIViewController_DisplayInDrawer_Example.framework */;
+			productReference = F2C261B6F9801F71B2C0432D035693EF /* Pods_UIViewController_DisplayInDrawer_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -327,12 +261,11 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 129E62B2C0B48D783155E57ACF8F817A /* Products */;
+			productRefGroup = 630D0932B3C81F755EC613B0FB2C0E11 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				D0EDC1335C965ACC186A22FAC33EE452 /* Pods-UIViewController-DisplayInDrawer_Example */,
-				5CC4FA74D6EAD4AECE0A7B92907742DE /* Pods-UIViewController-DisplayInDrawer_Tests */,
 				7CC9934A479AC70CBD5459E6AEBF00A2 /* UIViewController-DisplayInDrawer */,
 			);
 		};
@@ -347,20 +280,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		E17BC55343F8B711B5FB77E524D2FE92 /* Sources */ = {
+		E2C89C055BA1745051AEC949065B8C79 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1E8A5C1B72552B9D684080FF7522F663 /* ReplaceMe.swift in Sources */,
-				0D9A1E70597BC9FB32C4A723A5B58AF2 /* UIViewController-DisplayInDrawer-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E43500043B2C841501A6A60868D30C35 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				15F17A37A275CE6E1ECEDCB64F5CE1FC /* Pods-UIViewController-DisplayInDrawer_Tests-dummy.m in Sources */,
+				3E9C73091C784E7934801C4698976A3B /* dLog.swift in Sources */,
+				7D7EBD365290ABD3947550516BA6DF80 /* PanGestureTarget.swift in Sources */,
+				4325F1382064AD794D00882CC3FBD874 /* UIView+PinSubview.swift in Sources */,
+				F9FBAA85E592E90B78C6F0229004BAC8 /* UIViewController+PresentDrawerController.swift in Sources */,
+				339099367242115FBE944BC8AB91D254 /* UIViewController-DisplayInDrawer-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,86 +301,10 @@
 			target = 7CC9934A479AC70CBD5459E6AEBF00A2 /* UIViewController-DisplayInDrawer */;
 			targetProxy = 2ABC678AAD027207AFF014F21DFD04AE /* PBXContainerItemProxy */;
 		};
-		A556C8F74F9AA2E0D65BF212136E03C4 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "Pods-UIViewController-DisplayInDrawer_Example";
-			target = D0EDC1335C965ACC186A22FAC33EE452 /* Pods-UIViewController-DisplayInDrawer_Example */;
-			targetProxy = 43FE2C8FEE9E181A9135709AC8ED2E7E /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1A025D934226FBF5068BD55D45568E04 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 56AFB0C99818E6E012808FBB15F9E646 /* Pods-UIViewController-DisplayInDrawer_Example.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-UIViewController-DisplayInDrawer_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-UIViewController-DisplayInDrawer_Example/Pods-UIViewController-DisplayInDrawer_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		4A6C6B3B74B2B0C87768188392F5A3F3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 13137A48AB889AC938EBA7354486AE4E /* Pods-UIViewController-DisplayInDrawer_Example.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-UIViewController-DisplayInDrawer_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-UIViewController-DisplayInDrawer_Example/Pods-UIViewController-DisplayInDrawer_Example.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		8B33C5230DE4A9DFA6D8F46505DD7AF7 /* Debug */ = {
+		553022A828EE1991F07D2D73F565AEF8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -505,7 +357,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -515,73 +367,7 @@
 			};
 			name = Debug;
 		};
-		8DC47DB45A44E7360B25967B5C52738C /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E05B2F5D9143A5261C2D62155F7702CF /* Pods-UIViewController-DisplayInDrawer_Tests.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-UIViewController-DisplayInDrawer_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-UIViewController-DisplayInDrawer_Tests/Pods-UIViewController-DisplayInDrawer_Tests.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		AA16AE0C1E38D3C6D0E0283F72478FA5 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B4228943E6135A96FB2932E9F04EE409 /* UIViewController-DisplayInDrawer.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/UIViewController-DisplayInDrawer/UIViewController-DisplayInDrawer-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/UIViewController-DisplayInDrawer/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/UIViewController-DisplayInDrawer/UIViewController-DisplayInDrawer.modulemap";
-				PRODUCT_MODULE_NAME = UIViewController_DisplayInDrawer;
-				PRODUCT_NAME = UIViewController_DisplayInDrawer;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		B42B54097A876E8A982CBF5DAA91B1AB /* Release */ = {
+		58CE816B060A41D32CEC095441D0E3E0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -631,7 +417,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -639,10 +425,11 @@
 			};
 			name = Release;
 		};
-		D4A60F6DA770A58B42E67A03076EF38B /* Debug */ = {
+		616B8B112BC955A9B6C6013063F7FCAA /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B4228943E6135A96FB2932E9F04EE409 /* UIViewController-DisplayInDrawer.xcconfig */;
+			baseConfigurationReference = 31C50462E835732F02E73490C7861CBA /* UIViewController-DisplayInDrawer.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -655,7 +442,77 @@
 				GCC_PREFIX_HEADER = "Target Support Files/UIViewController-DisplayInDrawer/UIViewController-DisplayInDrawer-prefix.pch";
 				INFOPLIST_FILE = "Target Support Files/UIViewController-DisplayInDrawer/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/UIViewController-DisplayInDrawer/UIViewController-DisplayInDrawer.modulemap";
+				PRODUCT_MODULE_NAME = UIViewController_DisplayInDrawer;
+				PRODUCT_NAME = UIViewController_DisplayInDrawer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A13FE9E8EEE40F2EBCA4CD49C4BFDD97 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F530DC58CAEAB7EC7A590BC5E4ADDE28 /* Pods-UIViewController-DisplayInDrawer_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-UIViewController-DisplayInDrawer_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-UIViewController-DisplayInDrawer_Example/Pods-UIViewController-DisplayInDrawer_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A97345FB6571D72E578C91BDC4CF1B64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31C50462E835732F02E73490C7861CBA /* UIViewController-DisplayInDrawer.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/UIViewController-DisplayInDrawer/UIViewController-DisplayInDrawer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/UIViewController-DisplayInDrawer/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MODULEMAP_FILE = "Target Support Files/UIViewController-DisplayInDrawer/UIViewController-DisplayInDrawer.modulemap";
 				PRODUCT_MODULE_NAME = UIViewController_DisplayInDrawer;
@@ -671,11 +528,12 @@
 			};
 			name = Debug;
 		};
-		E0A45C4C6C7AA49295D8D04C571E2607 /* Release */ = {
+		C428FF7EDA58673604699F828FF9976B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 22F6E25A90ED3E372B5C81611E010B6A /* Pods-UIViewController-DisplayInDrawer_Tests.release.xcconfig */;
+			baseConfigurationReference = F74DA1184651522C085E95A9B9D6BD24 /* Pods-UIViewController-DisplayInDrawer_Example.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -685,12 +543,12 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-UIViewController-DisplayInDrawer_Tests/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-UIViewController-DisplayInDrawer_Example/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-UIViewController-DisplayInDrawer_Tests/Pods-UIViewController-DisplayInDrawer_Tests.modulemap";
+				MODULEMAP_FILE = "Target Support Files/Pods-UIViewController-DisplayInDrawer_Example/Pods-UIViewController-DisplayInDrawer_Example.modulemap";
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -698,12 +556,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
@@ -711,8 +570,8 @@
 		13DAF7B6487F3632B93992581F03B99D /* Build configuration list for PBXNativeTarget "UIViewController-DisplayInDrawer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				D4A60F6DA770A58B42E67A03076EF38B /* Debug */,
-				AA16AE0C1E38D3C6D0E0283F72478FA5 /* Release */,
+				A97345FB6571D72E578C91BDC4CF1B64 /* Debug */,
+				616B8B112BC955A9B6C6013063F7FCAA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -720,8 +579,8 @@
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				8B33C5230DE4A9DFA6D8F46505DD7AF7 /* Debug */,
-				B42B54097A876E8A982CBF5DAA91B1AB /* Release */,
+				553022A828EE1991F07D2D73F565AEF8 /* Debug */,
+				58CE816B060A41D32CEC095441D0E3E0 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -729,17 +588,8 @@
 		48E7432BF487424DFCCA9EED5E8AB1F2 /* Build configuration list for PBXNativeTarget "Pods-UIViewController-DisplayInDrawer_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				4A6C6B3B74B2B0C87768188392F5A3F3 /* Debug */,
-				1A025D934226FBF5068BD55D45568E04 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E135D30C3314CC64F45E6C5D026A041C /* Build configuration list for PBXNativeTarget "Pods-UIViewController-DisplayInDrawer_Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8DC47DB45A44E7360B25967B5C52738C /* Debug */,
-				E0A45C4C6C7AA49295D8D04C571E2607 /* Release */,
+				C428FF7EDA58673604699F828FF9976B /* Debug */,
+				A13FE9E8EEE40F2EBCA4CD49C4BFDD97 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
