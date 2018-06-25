@@ -18,10 +18,14 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+    Present any view controller easily in a drawer (iOS Maps style). It is implemented as a UIViewController extension, which means no subclassing and no invasive view hierarchy setup. It is designed to be as easy to use as possible:
 
-  s.homepage         = 'https://github.com/vilemkurz/UIViewController-DisplayInDrawer'
+  You can present any existing or new controller. Make it conform to the DrawerConfiguration protocol
+  Optionally setup a DrawerPositionDelegate which is notified about drawer's position
+  Call `displayInDrawer(controller, drawerPositionDelegate: delegate)`.
+  DESC
+
+  s.homepage         = 'https://github.com/inloop/UIViewController-DisplayInDrawer'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'vilemkurz' => 'vilem.kurz@inloopx.com' }
@@ -29,7 +33,7 @@ TODO: Add long description of the pod here.
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '10.0'
-
+  s.swift_version = '4.1'
   s.source_files = 'UIViewController-DisplayInDrawer/Classes/**/*'
   
   # s.resource_bundles = {
