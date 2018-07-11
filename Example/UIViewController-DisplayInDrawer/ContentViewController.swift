@@ -80,9 +80,14 @@ extension ContentViewController: DrawerConfiguration {
         return result
     }
 
+    func middlePositionY(for parentHeight: CGFloat) -> CGFloat? {
+        guard isViewLoaded else { return nil }
+        return parentHeight - separatorView.frame.minY
+    }
+
     func bottomPositionY(for parentHeight: CGFloat) -> CGFloat {
         guard isViewLoaded else { return 0 }
-        return parentHeight - separatorView.frame.minY
+        return parentHeight - 18
     }
 
     func setPanGestureTarget(_ target: Any, action: Selector) {

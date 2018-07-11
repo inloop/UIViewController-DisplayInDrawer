@@ -4,6 +4,8 @@ import UIKit
 
 public protocol DrawerConfiguration: class {
     func topPositionY(for parentHeight: CGFloat) -> CGFloat
+    ///If you return nil, there will only be two positions, top and bottom
+    func middlePositionY(for parentHeight: CGFloat) -> CGFloat?
     func bottomPositionY(for parentHeight: CGFloat) -> CGFloat
     /**
      drawerDismissClosure is injected by this lib.
@@ -25,8 +27,9 @@ public protocol DrawerConfiguration: class {
 }
 
 public protocol DrawerPositionDelegate: class {
-    func didMoveDrawerToBasePosition()
     func didMoveDrawerToTopPosition()
+    func didMoveDrawerToMiddlePosition()
+    func didMoveDrawerToBasePosition()
     func willDismissDrawer()
     func didDismissDrawer()
 }
@@ -84,7 +87,8 @@ extension UIViewController {
         return { [weak self, weak containerView, weak initialDisplayAnimator] in
             guard let strongSelf = self, let strongContainerView = containerView else { return }
             let oldTopPositionY = panGestureTarget.topPositionY!
-            let oldBasePositionY = panGestureTarget.basePositionY!
+            let oldMiddlePositionY = panGestureTarget.middlePositionY
+            let oldBasePositionY = panGestureTarget.bottomPositionY!
             panGestureTarget.refreshDrawerPositions()
             let newContainerHeight = strongSelf.view.bounds.height - panGestureTarget.topPositionY + bottomOverpullPaddingHeight
             if strongContainerView.frame.height != newContainerHeight {
@@ -95,19 +99,38 @@ extension UIViewController {
 
             let isOnOldTopPosition = Int(strongContainerView.frame.minY) == Int(oldTopPositionY)
             let newTopPositionIsDifferentThanOld = Int(panGestureTarget.topPositionY) != Int(oldTopPositionY)
+
+            let isOnOldMiddlePosition: Bool
+            let newMiddlePositionIsDifferentThanOld: Bool
+            if let oldMiddlePositionY = oldMiddlePositionY, let newMiddlePositionY = panGestureTarget.middlePositionY {
+                isOnOldMiddlePosition = Int(strongContainerView.frame.minY) == Int(oldMiddlePositionY)
+                newMiddlePositionIsDifferentThanOld = Int(newMiddlePositionY) != Int(oldMiddlePositionY)
+            } else {
+                isOnOldMiddlePosition = false
+                newMiddlePositionIsDifferentThanOld = false
+            }
+
             let isOnOldBottomPosition = Int(strongContainerView.frame.minY) == Int(oldBasePositionY)
-            let newBottomPositionIsDifferentThanOld = Int(panGestureTarget.basePositionY) != Int(oldBasePositionY)
+            let newBottomPositionIsDifferentThanOld = Int(panGestureTarget.bottomPositionY) != Int(oldBasePositionY)
+
             let isInitialDisplayAnimation = initialDisplayAnimator != nil
+
             if !isInitialDisplayAnimation && isOnOldTopPosition && newTopPositionIsDifferentThanOld {
                 self?.updateDrawerPosition(
                     inFlightAnimator: initialDisplayAnimator,
                     newTargetY: panGestureTarget.topPositionY,
                     containerView: strongContainerView
                 )
+            } else if !isInitialDisplayAnimation && isOnOldMiddlePosition && newMiddlePositionIsDifferentThanOld {
+                self?.updateDrawerPosition(
+                    inFlightAnimator: initialDisplayAnimator,
+                    newTargetY: panGestureTarget.middlePositionY ?? panGestureTarget.bottomPositionY,
+                    containerView: strongContainerView
+                )
             } else if isOnOldBottomPosition && newBottomPositionIsDifferentThanOld {
                 self?.updateDrawerPosition(
                     inFlightAnimator: initialDisplayAnimator,
-                    newTargetY: panGestureTarget.basePositionY,
+                    newTargetY: panGestureTarget.bottomPositionY,
                     containerView: strongContainerView
                 )
             }
