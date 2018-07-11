@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  UIViewController-DisplayInDrawer: 0aa35eb7a8f2bf619c8161ee55d2bdf260bd3850
+  UIViewController-DisplayInDrawer: 61f7f8442e5807d7f4ca1baeb94d544b1e0b0cf2
 
 PODFILE CHECKSUM: b90b887318da9d26593eba7d1999d3632ffbe544
 
