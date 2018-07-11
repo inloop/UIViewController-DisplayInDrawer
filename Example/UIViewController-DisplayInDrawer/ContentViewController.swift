@@ -68,21 +68,21 @@ class ContentViewController: UIViewController {
 }
 
 extension ContentViewController: DrawerConfiguration {
-    func topPositionY(in parentFrame: CGRect) -> CGFloat {
+    func topPositionY(for parentHeight: CGFloat) -> CGFloat {
         guard isViewLoaded else { return 0 }
         /*
          You can return constant, but this is a more dynamic example:
          How to avoid making the drawer unneccessarily larger than its content
          */
         let minimalTopPosition: CGFloat = 50
-        let idealTopPosition = parentFrame.height - contentDerivedHeight()
+        let idealTopPosition = parentHeight - contentDerivedHeight()
         let result = fmax(minimalTopPosition, idealTopPosition)
         return result
     }
 
-    var bottomPositionHeight: CGFloat {
+    func bottomPositionY(for parentHeight: CGFloat) -> CGFloat {
         guard isViewLoaded else { return 0 }
-        return separatorView.frame.minY
+        return parentHeight - separatorView.frame.minY
     }
 
     func setPanGestureTarget(_ target: Any, action: Selector) {

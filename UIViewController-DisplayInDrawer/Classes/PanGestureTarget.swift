@@ -24,8 +24,7 @@ final class PanGestureTarget {
     private weak var drawerConfiguration: DrawerConfiguration?
     private weak var drawerPositionDelegate: DrawerPositionDelegate?
     private var initialDrawerCenterLocation: CGPoint = .zero
-    private var bottomPositionHeight: CGFloat!
-    var basePositionY: CGFloat { return canvasView.frame.height - bottomPositionHeight }
+    var basePositionY: CGFloat!
     var topPositionY: CGFloat!
 
     init(canvasView: UIView,
@@ -42,8 +41,8 @@ final class PanGestureTarget {
     }
 
     internal func refreshDrawerPositions() {
-        bottomPositionHeight = drawerConfiguration?.bottomPositionHeight ?? 0
-        topPositionY = drawerConfiguration?.topPositionY(in: canvasView.bounds) ?? 0
+        basePositionY = drawerConfiguration?.bottomPositionY(for: canvasView.bounds.height) ?? 0
+        topPositionY = drawerConfiguration?.topPositionY(for: canvasView.bounds.height) ?? 0
     }
 
     deinit {
@@ -117,7 +116,7 @@ final class PanGestureTarget {
 
     private func isInUpperHalfOfMovement() -> Bool {
         let allowedMovementMinY = topPositionY!
-        let allowedMovementMaxY = basePositionY
+        let allowedMovementMaxY = basePositionY!
         let halfMovement = (allowedMovementMaxY - allowedMovementMinY) / 2
         let movementMidY = allowedMovementMinY + halfMovement
         return drawerContainerView.frame.minY < movementMidY
