@@ -4,8 +4,17 @@ import UIKit
 import UIViewController_DisplayInDrawer
 
 class MainViewController: UIViewController {
+    @IBOutlet weak var changeContentButton: UIButton!
     @IBOutlet weak var useMiddlePositionSwitch: UISwitch!
-    weak var drawerContentController: ContentViewController?
+    @IBOutlet weak var presentInDrawerButton: UIButton!
+    @IBOutlet weak var pushButton: UIButton!
+
+    weak var drawerContentController: ContentViewController? {
+        didSet {
+            refreshButtons()
+        }
+    }
+
     @IBAction func push(_ sender: Any) {
         let controller = makeContentViewController()
         controller.setup(for: .fullScreen)
@@ -28,6 +37,22 @@ class MainViewController: UIViewController {
     @IBAction func useMiddlePositionSwitchDidChangeValue(_ sender: Any) {
         drawerContentController?.dismiss()
     }
+    
+    @IBAction func changeContentButtonPressed(_ sender: Any) {
+        drawerContentController?.changeContent()
+    }
+
+    private func refreshButtons() {
+        if drawerContentController != nil {
+            changeContentButton.isEnabled = true
+            presentInDrawerButton.isEnabled = false
+            pushButton.isEnabled = false
+        } else {
+            changeContentButton.isEnabled = false
+            presentInDrawerButton.isEnabled = true
+            pushButton.isEnabled = true
+        }
+    }
 }
 
 extension MainViewController: DrawerPositionDelegate {
@@ -48,6 +73,10 @@ extension MainViewController: DrawerPositionDelegate {
     }
 
     func didDismissDrawer() {
+        // didSet is not called when ARC releases weak property, we must force it manually. Moreover we have to wait for ARC to kick in.
+        DispatchQueue.main.async {
+            self.refreshButtons()
+        }
         NSLog("did dismiss drawer")
     }
 }

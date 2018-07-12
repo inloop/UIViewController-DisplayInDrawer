@@ -76,6 +76,7 @@
                     </view>
                     <connections>
                         <outlet property="closeButton" destination="rec-5d-zRb" id="ixl-JT-IQH"/>
+                        <outlet property="imageViewWidthConstraint" destination="kKl-Y0-BiY" id="uOH-KB-csx"/>
                         <outlet property="panGestureRecognizer" destination="fqM-oh-g3U" id="jP4-TS-SFx"/>
                         <outlet property="separatorView" destination="wOb-Gp-hc1" id="tlM-G0-l8m"/>
                         <outlet property="textView" destination="44Q-NB-NbD" id="Fgd-gZ-BMe"/>

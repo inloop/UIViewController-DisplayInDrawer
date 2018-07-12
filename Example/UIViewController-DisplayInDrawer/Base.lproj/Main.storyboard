@@ -61,7 +61,7 @@
                                 </connections>
                             </button>
                             <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="9aL-bC-GCL">
-                                <rect key="frame" x="182" y="83" width="121.5" height="121.5"/>
+                                <rect key="frame" x="182.5" y="83" width="121.5" height="121.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9aL-bC-GCL" secondAttribute="height" multiplier="1:1" id="9fQ-wl-ggV"/>
                                 </constraints>
@@ -84,6 +84,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L4w-pG-YSK">
+                                <rect key="frame" x="187" y="8" width="110" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="rbb-OR-JVg"/>
+                                </constraints>
+                                <state key="normal" title="Change content"/>
+                                <connections>
+                                    <action selector="changeContentButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="VYf-DU-oi2"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -95,8 +105,11 @@
                             <constraint firstItem="gE4-qu-Fbg" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="C2y-IK-33N"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9aL-bC-GCL" secondAttribute="trailing" id="C6x-nZ-IJW"/>
                             <constraint firstItem="hsr-oB-V4F" firstAttribute="top" secondItem="gE4-qu-Fbg" secondAttribute="bottom" constant="15" id="FEW-r5-nD2"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="L4w-pG-YSK" secondAttribute="trailing" constant="7" id="JuE-3v-kmg"/>
+                            <constraint firstItem="L4w-pG-YSK" firstAttribute="centerY" secondItem="n2S-kO-F6i" secondAttribute="centerY" id="KnJ-r3-IaO"/>
                             <constraint firstItem="WHI-2I-FcN" firstAttribute="top" secondItem="9aL-bC-GCL" secondAttribute="bottom" constant="8" id="KoQ-kH-Qqy"/>
                             <constraint firstItem="WHI-2I-FcN" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="L9z-XR-MVL"/>
+                            <constraint firstItem="L4w-pG-YSK" firstAttribute="leading" secondItem="n2S-kO-F6i" secondAttribute="trailing" constant="8" id="Xlg-8v-Izd"/>
                             <constraint firstItem="cye-0H-NTU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hsr-oB-V4F" secondAttribute="trailing" constant="4" id="dDG-3A-47S"/>
                             <constraint firstItem="n2S-kO-F6i" firstAttribute="centerY" secondItem="gE4-qu-Fbg" secondAttribute="centerY" id="g3d-Et-AI6"/>
                             <constraint firstItem="n2S-kO-F6i" firstAttribute="leading" secondItem="gE4-qu-Fbg" secondAttribute="trailing" constant="8" id="jOe-kH-kiv"/>
@@ -107,12 +120,15 @@
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="xRd-lz-Ipx"/>
                     <connections>
+                        <outlet property="changeContentButton" destination="L4w-pG-YSK" id="uJ3-lV-Qhe"/>
+                        <outlet property="presentInDrawerButton" destination="n2S-kO-F6i" id="duv-W5-jQx"/>
+                        <outlet property="pushButton" destination="gE4-qu-Fbg" id="Ahy-0R-7iY"/>
                         <outlet property="useMiddlePositionSwitch" destination="cye-0H-NTU" id="7ww-jB-jah"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="536.25" y="85.563380281690144"/>
+            <point key="canvasLocation" x="536.25" y="85"/>
         </scene>
     </scenes>
     <resources>
