@@ -135,12 +135,11 @@ extension ContentViewController: DrawerConfiguration {
     }
 
     private var useMiddlePosition: Bool {
-        if let mode = mode,
-            case let ContentMode.drawer(useMiddlePosition) = mode {
-            return useMiddlePosition
-        } else {
-            return false
+        guard let mode = mode,
+            case let ContentMode.drawer(useMiddlePosition) = mode else {
+                return false
         }
+        return useMiddlePosition
     }
 
     private func halfOpenPositionY(for parentHeight: CGFloat) -> CGFloat {
