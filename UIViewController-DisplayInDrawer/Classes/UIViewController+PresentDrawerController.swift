@@ -186,7 +186,11 @@ private extension UIView {
         var startFrame = bounds
         startFrame.size.height = bounds.height - drawerConfiguration.topPositionY(in: bounds) + bottomPaddingHeight
         startFrame.origin.y += bounds.height
-        let containerView = UIView(frame: startFrame)
+        /*
+         OutsideBoundsHittableView is used here so that we capture taps on dimmed background.
+         They should not fall through to underlying controller.
+         */
+        let containerView = OutsideBoundsHittableView(frame: startFrame)
         containerView.preservesSuperviewLayoutMargins = true
         addSubview(containerView)
         let effect = UIBlurEffect(style: UIBlurEffectStyle.extraLight)
