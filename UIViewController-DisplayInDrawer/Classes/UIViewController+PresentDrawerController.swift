@@ -3,8 +3,10 @@
 import UIKit
 
 public protocol DrawerConfiguration: class {
-    func topPositionY(in parentFrame: CGRect) -> CGFloat
-    var bottomPositionHeight: CGFloat { get }
+    func topPositionY(for parentHeight: CGFloat) -> CGFloat
+    ///If you return nil, there will only be two positions, top and bottom
+    func middlePositionY(for parentHeight: CGFloat) -> CGFloat?
+    func bottomPositionY(for parentHeight: CGFloat) -> CGFloat
     /**
      drawerDismissClosure is injected by this lib.
      You should not change it, and you should call it when user presses dismiss button in your content view controller.
@@ -25,8 +27,9 @@ public protocol DrawerConfiguration: class {
 }
 
 public protocol DrawerPositionDelegate: class {
-    func didMoveDrawerToBasePosition()
     func didMoveDrawerToTopPosition()
+    func didMoveDrawerToMiddlePosition()
+    func didMoveDrawerToBasePosition()
     func willDismissDrawer()
     func didDismissDrawer()
 }
@@ -84,7 +87,8 @@ extension UIViewController {
         return { [weak self, weak containerView, weak initialDisplayAnimator] in
             guard let strongSelf = self, let strongContainerView = containerView else { return }
             let oldTopPositionY = panGestureTarget.topPositionY!
-            let oldBasePositionY = panGestureTarget.basePositionY
+            let oldMiddlePositionY = panGestureTarget.middlePositionY
+            let oldBasePositionY = panGestureTarget.bottomPositionY!
             panGestureTarget.refreshDrawerPositions()
             let newContainerHeight = strongSelf.view.bounds.height - panGestureTarget.topPositionY + bottomOverpullPaddingHeight
             if strongContainerView.frame.height != newContainerHeight {
@@ -95,17 +99,39 @@ extension UIViewController {
 
             let isOnOldTopPosition = Int(strongContainerView.frame.minY) == Int(oldTopPositionY)
             let newTopPositionIsDifferentThanOld = Int(panGestureTarget.topPositionY) != Int(oldTopPositionY)
+
+            let isOnOldMiddlePosition: Bool
+            let newMiddlePositionIsDifferentThanOld: Bool
+            if let oldMiddlePositionY = oldMiddlePositionY, let newMiddlePositionY = panGestureTarget.middlePositionY {
+                isOnOldMiddlePosition = Int(strongContainerView.frame.minY) == Int(oldMiddlePositionY)
+                newMiddlePositionIsDifferentThanOld = Int(newMiddlePositionY) != Int(oldMiddlePositionY)
+            } else {
+                isOnOldMiddlePosition = false
+                newMiddlePositionIsDifferentThanOld = false
+            }
+
             let isOnOldBottomPosition = Int(strongContainerView.frame.minY) == Int(oldBasePositionY)
-            let newBottomPositionIsDifferentThanOld = Int(panGestureTarget.basePositionY) != Int(oldBasePositionY)
-            if isOnOldTopPosition && newTopPositionIsDifferentThanOld {
-                self?.updateWithNewYPosition(panGestureTarget.topPositionY,
-                                             containerView: strongContainerView,
-                                             inFlightAnimator: initialDisplayAnimator
+            let newBottomPositionIsDifferentThanOld = Int(panGestureTarget.bottomPositionY) != Int(oldBasePositionY)
+
+            let isInitialDisplayAnimation = initialDisplayAnimator != nil
+
+            if !isInitialDisplayAnimation && isOnOldTopPosition && newTopPositionIsDifferentThanOld {
+                self?.updateDrawerPosition(
+                    inFlightAnimator: initialDisplayAnimator,
+                    newTargetY: panGestureTarget.topPositionY,
+                    containerView: strongContainerView
+                )
+            } else if !isInitialDisplayAnimation && isOnOldMiddlePosition && newMiddlePositionIsDifferentThanOld {
+                self?.updateDrawerPosition(
+                    inFlightAnimator: initialDisplayAnimator,
+                    newTargetY: panGestureTarget.middlePositionY ?? panGestureTarget.bottomPositionY,
+                    containerView: strongContainerView
                 )
             } else if isOnOldBottomPosition && newBottomPositionIsDifferentThanOld {
-                self?.updateWithNewYPosition(panGestureTarget.basePositionY,
-                                             containerView: strongContainerView,
-                                             inFlightAnimator: initialDisplayAnimator
+                self?.updateDrawerPosition(
+                    inFlightAnimator: initialDisplayAnimator,
+                    newTargetY: panGestureTarget.bottomPositionY,
+                    containerView: strongContainerView
                 )
             }
         }
@@ -122,10 +148,10 @@ extension UIViewController {
         controller.didMove(toParentViewController: self)
     }
 
-    private func updateWithNewYPosition(_ newY: CGFloat, containerView: UIView, inFlightAnimator: UIViewPropertyAnimator?) {
+    private func updateDrawerPosition(inFlightAnimator: UIViewPropertyAnimator?, newTargetY: CGFloat, containerView: UIView) {
         dLog("inFlightAnimator: \(String(describing: inFlightAnimator))")
         var newFrame = containerView.frame
-        newFrame.origin.y = newY
+        newFrame.origin.y = newTargetY
         if let animator = inFlightAnimator {
             animator.addAnimations { containerView.frame = newFrame }
         } else {
@@ -137,7 +163,7 @@ extension UIViewController {
                                             containerView: UIView,
                                             positionDelegate: DrawerPositionDelegate?) -> UIViewPropertyAnimator {
         var endFrame = containerView.frame
-        endFrame.origin.y = view.bounds.height - drawerConfiguration.bottomPositionHeight
+        endFrame.origin.y = drawerConfiguration.bottomPositionY(for: view.bounds.height)
         let animator = UIViewPropertyAnimator(duration: 0.25, curve: .easeInOut, animations: {
             containerView.frame = endFrame
         })
@@ -184,7 +210,7 @@ extension UIViewController {
 private extension UIView {
     func addContainerView(for drawerConfiguration: DrawerConfiguration, cornerRadius: CGFloat, bottomPaddingHeight: CGFloat) -> UIView {
         var startFrame = bounds
-        startFrame.size.height = bounds.height - drawerConfiguration.topPositionY(in: bounds) + bottomPaddingHeight
+        startFrame.size.height = bounds.height - drawerConfiguration.topPositionY(for: bounds.height) + bottomPaddingHeight
         startFrame.origin.y += bounds.height
         /*
          OutsideBoundsHittableView is used here so that we capture taps on dimmed background.

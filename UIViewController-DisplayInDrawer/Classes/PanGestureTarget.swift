@@ -8,6 +8,7 @@ final class PanGestureTarget {
      when view lands at the target drawer position
      */
     private let bounceVelocityThreshold: CGFloat = 100
+    private let skipMiddleVelocityThreshold: CGFloat = 1500
     private let animationDuration: TimeInterval = 0.25
     private let dampedAnimationDuration: TimeInterval = 0.4
     private let springAnimationDamping: CGFloat = 0.75
@@ -24,9 +25,9 @@ final class PanGestureTarget {
     private weak var drawerConfiguration: DrawerConfiguration?
     private weak var drawerPositionDelegate: DrawerPositionDelegate?
     private var initialDrawerCenterLocation: CGPoint = .zero
-    private var bottomPositionHeight: CGFloat!
-    var basePositionY: CGFloat { return canvasView.frame.height - bottomPositionHeight }
     var topPositionY: CGFloat!
+    var middlePositionY: CGFloat?
+    var bottomPositionY: CGFloat!
 
     init(canvasView: UIView,
          drawerContainerView: UIView,
@@ -42,8 +43,9 @@ final class PanGestureTarget {
     }
 
     internal func refreshDrawerPositions() {
-        bottomPositionHeight = drawerConfiguration?.bottomPositionHeight ?? 0
-        topPositionY = drawerConfiguration?.topPositionY(in: canvasView.bounds) ?? 0
+        bottomPositionY = drawerConfiguration?.bottomPositionY(for: canvasView.bounds.height) ?? 0
+        topPositionY = drawerConfiguration?.topPositionY(for: canvasView.bounds.height) ?? 0
+        middlePositionY = drawerConfiguration?.middlePositionY(for: canvasView.bounds.height)
     }
 
     deinit {
@@ -57,16 +59,13 @@ final class PanGestureTarget {
             performDrag(recognizer: recognizer)
         } else if recognizer.state == .ended || recognizer.state == .cancelled {
             let velocity = recognizer.velocity(in: canvasView)
-            if shouldFinishUp(recognizer: recognizer) {
-                animate(to: topPositionY, velocity: velocity)
-            } else {
-                animate(to: basePositionY, velocity: velocity)
-            }
+            let targetPositionY = self.targetPositionY(for: velocity)
+            animate(to: targetPositionY, velocity: velocity)
         }
     }
 
     private var isDraggedViewWithinAllowedArea: Bool {
-        return drawerContainerView.frame.minY > topPositionY && drawerContainerView.frame.minY < basePositionY
+        return drawerContainerView.frame.minY > topPositionY && drawerContainerView.frame.minY < bottomPositionY
     }
 
     private func performDrag(recognizer: UIPanGestureRecognizer) {
@@ -85,16 +84,20 @@ final class PanGestureTarget {
 
     private func updateDimming() {
         guard overDragAmount(drawerContainerView.center) == 0 else { return }
-        let currentDistanceToBasePosition = basePositionY - drawerContainerView.frame.minY
-        let totalDraggableDistance = basePositionY - topPositionY
-        let movementPercentage = currentDistanceToBasePosition / totalDraggableDistance
+        let currentDistanceToDimStartPosition = dimStartPosition - drawerContainerView.frame.minY
+        let totalDraggableDistance = dimStartPosition - topPositionY
+        let movementPercentage = currentDistanceToDimStartPosition / totalDraggableDistance
         dimmingView.alpha = movementPercentage * targetDimmingViewAlpha
+    }
+
+    private var dimStartPosition: CGFloat {
+        return middlePositionY ?? bottomPositionY
     }
 
     private func overDragAmount(_ newCenter: CGPoint) -> CGFloat {
         let newMinY = newCenter.y - drawerContainerView.frame.height/2
         let aboveTop = newMinY - topPositionY
-        let underBottom = newMinY - basePositionY
+        let underBottom = newMinY - bottomPositionY
         if aboveTop < 0 {
             return aboveTop
         } else if underBottom > 0 {
@@ -104,23 +107,46 @@ final class PanGestureTarget {
         }
     }
 
-    private func shouldFinishUp(recognizer: UIPanGestureRecognizer) -> Bool {
-        let velocity = recognizer.velocity(in: canvasView)
+    private func targetPositionY(for velocity: CGPoint) -> CGFloat {
+        let isDraggingQuickly = abs(velocity.y) > skipMiddleVelocityThreshold
         let isDraggingSlowly = abs(velocity.y) < bounceVelocityThreshold
-        if isDraggingSlowly {
-            return isInUpperHalfOfMovement()
+        let isDraggingUp = velocity.y < 0
+        if isDraggingQuickly && isDraggingUp {
+            return topPositionY
+        } else if isDraggingQuickly && !isDraggingUp {
+            return bottomPositionY
+        } else if isDraggingSlowly {
+            return nearestPosition(searchStyle: .nearest)
+        } else if isDraggingUp {
+            return nearestPosition(searchStyle: .higher)
+        } else if !isDraggingUp {
+            return nearestPosition(searchStyle: .lower)
         } else {
-            let isDraggingUp = velocity.y < 0
-            return isDraggingUp
+            fatalError()
         }
     }
 
-    private func isInUpperHalfOfMovement() -> Bool {
-        let allowedMovementMinY = topPositionY!
-        let allowedMovementMaxY = basePositionY
-        let halfMovement = (allowedMovementMaxY - allowedMovementMinY) / 2
-        let movementMidY = allowedMovementMinY + halfMovement
-        return drawerContainerView.frame.minY < movementMidY
+    private enum NearestPositionSearchStyle {
+        case nearest, higher, lower
+    }
+
+    private func nearestPosition(searchStyle: NearestPositionSearchStyle) -> CGFloat {
+        let currentPosition = drawerContainerView.frame.minY
+        switch searchStyle {
+        case .nearest:
+            return positionsArray.min(by: { abs(currentPosition - $0) < abs(currentPosition - $1) })!
+        case .higher:
+            /* Keep in mind, that higher position means lower Y in UIView coordinate system */
+            return positionsArray.sorted(by: >).first(where: { currentPosition - $0 > 0 }) ?? topPositionY
+        case .lower:
+            /* Keep in mind, that lower position means higher Y in UIView coordinate system */
+            return positionsArray.sorted(by: <).first(where: { $0 - currentPosition > 0 }) ?? bottomPositionY
+        }
+    }
+
+    private var positionsArray: [CGFloat] {
+        guard let middlePositionY = middlePositionY else { return [bottomPositionY, topPositionY] }
+        return [bottomPositionY, middlePositionY, topPositionY]
     }
 
     private func animate(to minY: CGFloat, velocity: CGPoint) {
@@ -136,6 +162,8 @@ final class PanGestureTarget {
             guard finished else { return }
             if self.isOnTopPosition {
                 self.drawerPositionDelegate?.didMoveDrawerToTopPosition()
+            } else if self.isOnMiddlePosition {
+                self.drawerPositionDelegate?.didMoveDrawerToMiddlePosition()
             } else if self.isOnBasePosition {
                 self.drawerPositionDelegate?.didMoveDrawerToBasePosition()
             }
@@ -159,6 +187,16 @@ final class PanGestureTarget {
         }
     }
 
-    private var isOnTopPosition: Bool { return Int(drawerContainerView.frame.minY) == Int(topPositionY) }
-    private var isOnBasePosition: Bool { return Int(drawerContainerView.frame.minY) == Int(basePositionY) }
+    private var isOnTopPosition: Bool {
+        return Int(drawerContainerView.frame.minY) == Int(topPositionY)
+    }
+
+    private var isOnMiddlePosition: Bool {
+        guard let middlePositionY = middlePositionY else { return false }
+        return Int(drawerContainerView.frame.minY) == Int(middlePositionY)
+    }
+
+    private var isOnBasePosition: Bool {
+        return Int(drawerContainerView.frame.minY) == Int(bottomPositionY)
+    }
 }
