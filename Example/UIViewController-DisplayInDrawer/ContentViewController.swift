@@ -5,7 +5,7 @@ import UIViewController_DisplayInDrawer
 
 enum ContentMode {
     case fullScreen
-    case drawer
+    case drawer(useMiddlePosition: Bool)
 
     var config: ContentConfig {
         switch self {
@@ -57,7 +57,7 @@ class ContentViewController: UIViewController {
         setupMode()
     }
 
-    @IBAction private func dismiss() {
+    @IBAction func dismiss() {
         drawerDismissClosure?()
     }
 
@@ -81,13 +81,17 @@ extension ContentViewController: DrawerConfiguration {
     }
 
     func middlePositionY(for parentHeight: CGFloat) -> CGFloat? {
-        guard isViewLoaded else { return nil }
-        return parentHeight - separatorView.frame.minY
+        guard isViewLoaded, useMiddlePosition else { return nil }
+        return halfOpenPositionY(for: parentHeight)
     }
 
     func bottomPositionY(for parentHeight: CGFloat) -> CGFloat {
         guard isViewLoaded else { return 0 }
-        return parentHeight - 18
+        if useMiddlePosition {
+            return parentHeight - 18
+        } else {
+            return halfOpenPositionY(for: parentHeight)
+        }
     }
 
     func setPanGestureTarget(_ target: Any, action: Selector) {
@@ -100,6 +104,19 @@ extension ContentViewController: DrawerConfiguration {
         let scrollableContentHeight = textView.heightThatReallyFits()
         let bottomPadding: CGFloat = 16
         return fixedContentHeight + scrollableContentHeight + bottomPadding
+    }
+
+    private var useMiddlePosition: Bool {
+        if let mode = mode,
+            case let ContentMode.drawer(useMiddlePosition) = mode {
+            return useMiddlePosition
+        } else {
+            return false
+        }
+    }
+
+    private func halfOpenPositionY(for parentHeight: CGFloat) -> CGFloat {
+        return parentHeight - separatorView.frame.minY
     }
 }
 

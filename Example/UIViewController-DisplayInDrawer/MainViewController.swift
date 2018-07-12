@@ -4,6 +4,8 @@ import UIKit
 import UIViewController_DisplayInDrawer
 
 class MainViewController: UIViewController {
+    @IBOutlet weak var useMiddlePositionSwitch: UISwitch!
+    weak var drawerContentController: ContentViewController?
     @IBAction func push(_ sender: Any) {
         let controller = makeContentViewController()
         controller.setup(for: .fullScreen)
@@ -12,14 +14,19 @@ class MainViewController: UIViewController {
 
     @IBAction func presentInDrawer(_ sender: Any) {
         let controller = makeContentViewController()
-        controller.setup(for: .drawer)
+        controller.setup(for: .drawer(useMiddlePosition: useMiddlePositionSwitch.isOn))
         navigationController?.displayInDrawer(controller, drawerPositionDelegate: self)
+        drawerContentController = controller
     }
 
     private func makeContentViewController() -> ContentViewController {
         let storyboard = UIStoryboard(name: "Content", bundle: nil)
         let result = storyboard.instantiateInitialViewController() as! ContentViewController
         return result
+    }
+
+    @IBAction func useMiddlePositionSwitchDidChangeValue(_ sender: Any) {
+        drawerContentController?.dismiss()
     }
 }
 
