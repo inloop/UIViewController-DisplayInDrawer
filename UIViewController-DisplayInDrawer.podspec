@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'UIViewController-DisplayInDrawer'
-  s.version          = '0.1.0'
+  s.version          = '1.0.0'
   s.summary          = 'Present any view controller easily in a drawer (iOS Maps style)'
 
 # This description is used to generate tags and improve search results.
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
     Present any view controller easily in a drawer (iOS Maps style). It is implemented as a UIViewController extension, which means no subclassing and no invasive view hierarchy setup. It is designed to be as easy to use as possible:
 
-  You can present any existing or new controller. Make it conform to the DrawerConfiguration protocol
+  You can present any controller. Make it conform to the DrawerConfiguration protocol
   Optionally setup a DrawerPositionDelegate which is notified about drawer's position
   Call `displayInDrawer(controller, drawerPositionDelegate: delegate)`.
   DESC
