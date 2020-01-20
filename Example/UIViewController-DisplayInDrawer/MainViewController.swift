@@ -42,6 +42,10 @@ class MainViewController: UIViewController {
         drawerContentController?.changeContent()
     }
 
+    @IBAction func pullDownPressed(_ sender: Any) {
+        drawerContentController?.drawerPullDownClosure?()
+    }
+
     private func refreshButtons() {
         if drawerContentController != nil {
             changeContentButton.isEnabled = true

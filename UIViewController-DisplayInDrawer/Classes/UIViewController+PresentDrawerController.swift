@@ -14,6 +14,11 @@ public protocol DrawerConfiguration: class {
      */
     var drawerDismissClosure: (() -> Void)? { get set }
     /**
+     drawerPullDownClosure is injected by this lib.
+     You should not change it, and you should call it when you want to pull view controller into initial position.
+     */
+    var drawerPullDownClosure: (() -> Void)? { get set }
+    /**
     didChangeLayoutClosure is injected by this lib.
     You should not change it, and you should call it in didLayoutSubviews() method of your content view controller.
      It will update the drawer size to accomodate for your controller's new layout.
@@ -65,6 +70,16 @@ extension UIViewController {
                                               dimmingView: dimmingView,
                                               drawerPositionDelegate: drawerPositionDelegate
             )
+        }
+        controller.drawerPullDownClosure = { [weak self, weak containerView, weak controller, weak drawerPositionDelegate, weak dimmingView] in
+            guard let strongContainerView = containerView,
+                let strongController = controller,
+                let strongDimmingView = dimmingView
+                else { return }
+            self?.pullDownDrawerViewController(in: strongContainerView,
+                                               drawerConfiguration: strongController,
+                                               positionDelegate: drawerPositionDelegate,
+                                               dimmingView: strongDimmingView)
         }
         let initialDisplayAnimator = makeInitialDisplayAnimator(drawerConfiguration: controller,
                                                                 containerView: containerView,
@@ -195,6 +210,19 @@ extension UIViewController {
         })
     }
 
+    private func pullDownDrawerViewController(in containerView: UIView,
+                                              drawerConfiguration: DrawerConfiguration,
+                                              positionDelegate: DrawerPositionDelegate?,
+                                              dimmingView: UIView) {
+        let animator = makeInitialDisplayAnimator(
+            drawerConfiguration: drawerConfiguration,
+            containerView: containerView,
+            positionDelegate: positionDelegate
+        )
+        animator.startAnimation()
+        dimmingView.alpha = 0
+    }
+    
     //TODO: rename Vito, upload to trunk and use a dependency
     private func removeChildViewController(from containerView: UIView) {
         let child = childViewController(at: containerView)
