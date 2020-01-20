@@ -214,13 +214,18 @@ extension UIViewController {
                                               drawerConfiguration: DrawerConfiguration,
                                               positionDelegate: DrawerPositionDelegate?,
                                               dimmingView: UIView) {
-        let animator = makeInitialDisplayAnimator(
-            drawerConfiguration: drawerConfiguration,
-            containerView: containerView,
-            positionDelegate: positionDelegate
-        )
-        animator.startAnimation()
-        dimmingView.alpha = 0
+        let currentFrame = containerView.frame
+        var targetFrame = currentFrame
+        targetFrame.origin.y = drawerConfiguration.bottomPositionY(for: view.bounds.height)
+        UIView.animate(
+            withDuration: 0.25,
+            animations: {
+                containerView.frame = targetFrame
+                dimmingView.alpha = 0
+        },
+            completion: { _ in
+                positionDelegate?.didMoveDrawerToBasePosition()
+        })
     }
     
     //TODO: rename Vito, upload to trunk and use a dependency
