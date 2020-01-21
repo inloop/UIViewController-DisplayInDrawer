@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="PRA-r8-8Pj">
-    <device id="retina3_5" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="PRA-r8-8Pj">
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,7 +12,7 @@
             <objects>
                 <navigationController id="PRA-r8-8Pj" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="yfm-sx-LBj">
-                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -37,7 +32,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="416"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="436"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gE4-qu-Fbg">
@@ -61,13 +56,13 @@
                                 </connections>
                             </button>
                             <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sun" translatesAutoresizingMaskIntoConstraints="NO" id="9aL-bC-GCL">
-                                <rect key="frame" x="182.5" y="83" width="121.5" height="121.5"/>
+                                <rect key="frame" x="182.5" y="103.5" width="121.5" height="121.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="9aL-bC-GCL" secondAttribute="height" multiplier="1:1" id="9fQ-wl-ggV"/>
                                 </constraints>
                             </imageView>
                             <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rainbow" translatesAutoresizingMaskIntoConstraints="NO" id="WHI-2I-FcN">
-                                <rect key="frame" x="0.0" y="213" width="320" height="203"/>
+                                <rect key="frame" x="0.0" y="233" width="320" height="203"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="WHI-2I-FcN" secondAttribute="height" multiplier="1588:1008" id="cF5-Q9-QYV"/>
                                 </constraints>
@@ -94,6 +89,13 @@
                                     <action selector="changeContentButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="VYf-DU-oi2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2iL-Zc-XPX">
+                                <rect key="frame" x="237" y="60" width="67" height="30"/>
+                                <state key="normal" title="Pull down"/>
+                                <connections>
+                                    <action selector="pullDownPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="uJN-WH-30G"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -105,10 +107,12 @@
                             <constraint firstItem="gE4-qu-Fbg" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="C2y-IK-33N"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9aL-bC-GCL" secondAttribute="trailing" id="C6x-nZ-IJW"/>
                             <constraint firstItem="hsr-oB-V4F" firstAttribute="top" secondItem="gE4-qu-Fbg" secondAttribute="bottom" constant="15" id="FEW-r5-nD2"/>
+                            <constraint firstItem="2iL-Zc-XPX" firstAttribute="centerY" secondItem="cye-0H-NTU" secondAttribute="centerY" id="JC5-fs-kC1"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="L4w-pG-YSK" secondAttribute="trailing" constant="7" id="JuE-3v-kmg"/>
                             <constraint firstItem="L4w-pG-YSK" firstAttribute="centerY" secondItem="n2S-kO-F6i" secondAttribute="centerY" id="KnJ-r3-IaO"/>
                             <constraint firstItem="WHI-2I-FcN" firstAttribute="top" secondItem="9aL-bC-GCL" secondAttribute="bottom" constant="8" id="KoQ-kH-Qqy"/>
                             <constraint firstItem="WHI-2I-FcN" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="L9z-XR-MVL"/>
+                            <constraint firstAttribute="trailing" secondItem="2iL-Zc-XPX" secondAttribute="trailing" constant="16" id="RRf-i6-MBE"/>
                             <constraint firstItem="L4w-pG-YSK" firstAttribute="leading" secondItem="n2S-kO-F6i" secondAttribute="trailing" constant="8" id="Xlg-8v-Izd"/>
                             <constraint firstItem="cye-0H-NTU" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="hsr-oB-V4F" secondAttribute="trailing" constant="4" id="dDG-3A-47S"/>
                             <constraint firstItem="n2S-kO-F6i" firstAttribute="centerY" secondItem="gE4-qu-Fbg" secondAttribute="centerY" id="g3d-Et-AI6"/>

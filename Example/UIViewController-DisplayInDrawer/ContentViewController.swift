@@ -37,7 +37,8 @@ class ContentViewController: UIViewController {
      */
     var drawerDismissClosure: (() -> Void)?
     var didChangeLayoutClosure: (() -> Void)?
-
+    var drawerPullDownClosure: (() -> Void)?
+    
     deinit {
         NSLog("$$$$$$ ContentViewController")
     }

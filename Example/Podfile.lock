@@ -1,5 +1,5 @@
 PODS:
-  - UIViewController-DisplayInDrawer (0.1.0)
+  - UIViewController-DisplayInDrawer (1.0.0)
 
 DEPENDENCIES:
   - UIViewController-DisplayInDrawer (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  UIViewController-DisplayInDrawer: 61f7f8442e5807d7f4ca1baeb94d544b1e0b0cf2
+  UIViewController-DisplayInDrawer: c131b40d8c18c7d1847ff9ccef078f4c34fe8c37
 
 PODFILE CHECKSUM: b90b887318da9d26593eba7d1999d3632ffbe544
 
-COCOAPODS: 1.5.3
+COCOAPODS: 1.8.4
