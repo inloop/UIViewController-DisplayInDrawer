@@ -97,8 +97,8 @@ class ContentViewController: UIViewController {
 }
 
 extension ContentViewController: DrawerConfiguration {
-    var drawerBackgroundColor: UIColor? {
-        return nil
+    var drawerBackgroundColor: UIColor {
+        return .clear
     }
 
     var drawerCornerRadius: CGFloat {
