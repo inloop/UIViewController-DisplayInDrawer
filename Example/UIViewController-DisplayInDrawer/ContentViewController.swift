@@ -97,6 +97,14 @@ class ContentViewController: UIViewController {
 }
 
 extension ContentViewController: DrawerConfiguration {
+    var drawerBackgroundColor: UIColor? {
+        return nil
+    }
+
+    var drawerCornerRadius: CGFloat {
+        return 10
+    }
+
     func topPositionY(for parentHeight: CGFloat) -> CGFloat {
         guard isViewLoaded else { return 0 }
         /*

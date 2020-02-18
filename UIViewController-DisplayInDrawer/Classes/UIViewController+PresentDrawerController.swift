@@ -8,6 +8,14 @@ public protocol DrawerConfiguration: class {
     func middlePositionY(for parentHeight: CGFloat) -> CGFloat?
     func bottomPositionY(for parentHeight: CGFloat) -> CGFloat
     /**
+     Background color of the drawer controller. If value is nil, then light effect is applied to the background.
+     */
+    var drawerBackgroundColor: UIColor? { get }
+    /**
+     Corner radius of the drawer controller.
+     */
+    var drawerCornerRadius: CGFloat { get }
+    /**
      drawerDismissClosure is injected by this lib.
      You should not change it, and you should call it when user presses dismiss button in your content view controller.
      It will hide the drawer.
@@ -41,13 +49,14 @@ public protocol DrawerPositionDelegate: class {
 
 extension UIViewController {
     public func displayInDrawer(_ controller: UIViewController & DrawerConfiguration, drawerPositionDelegate: DrawerPositionDelegate?) {
-        let cornerRadius: CGFloat = 10
+        let cornerRadius = controller.drawerCornerRadius
         ///How much blank space is inserted at bottom
         let bottomOverpullPaddingHeight: CGFloat = 130
         let containerView = view.addContainerView(
-            for: controller, cornerRadius:
-            cornerRadius, bottomPaddingHeight:
-            bottomOverpullPaddingHeight
+            for: controller,
+            cornerRadius: cornerRadius,
+            bottomPaddingHeight: bottomOverpullPaddingHeight,
+            withBackground: controller.drawerBackgroundColor
         )
         /*
          Warning: when you add any decoration views, make sure, that their content is masked not to cover blur effect view.
@@ -241,7 +250,7 @@ extension UIViewController {
 }
 
 private extension UIView {
-    func addContainerView(for drawerConfiguration: DrawerConfiguration, cornerRadius: CGFloat, bottomPaddingHeight: CGFloat) -> UIView {
+    func addContainerView(for drawerConfiguration: DrawerConfiguration, cornerRadius: CGFloat, bottomPaddingHeight: CGFloat, withBackground: UIColor?) -> UIView {
         var startFrame = bounds
         startFrame.size.height = bounds.height - drawerConfiguration.topPositionY(for: bounds.height) + bottomPaddingHeight
         startFrame.origin.y += bounds.height
@@ -252,12 +261,16 @@ private extension UIView {
         let containerView = OutsideBoundsHittableView(frame: startFrame)
         containerView.preservesSuperviewLayoutMargins = true
         addSubview(containerView)
-        let effect = UIBlurEffect(style: UIBlurEffectStyle.extraLight)
-        let containerEffectView = UIVisualEffectView(effect: effect)
-        containerEffectView.frame = containerView.bounds
-        containerEffectView.layer.cornerRadius = cornerRadius
-        containerEffectView.clipsToBounds = true
-        containerView.pinSubview(containerEffectView)
+        if let backgroundColor = withBackground {
+            containerView.backgroundColor = withBackground
+        } else {
+            let effect = UIBlurEffect(style: UIBlurEffectStyle.extraLight)
+            let containerEffectView = UIVisualEffectView(effect: effect)
+            containerEffectView.frame = containerView.bounds
+            containerEffectView.layer.cornerRadius = cornerRadius
+            containerEffectView.clipsToBounds = true
+            containerView.pinSubview(containerEffectView)
+        }
         return containerView
     }
 
