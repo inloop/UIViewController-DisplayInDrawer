@@ -98,11 +98,11 @@ class ContentViewController: UIViewController {
 
 extension ContentViewController: DrawerConfiguration {
     var drawerBackgroundColor: UIColor {
-        return .clear
+        return .clear //this is the default, could be omitted
     }
 
     var drawerCornerRadius: CGFloat {
-        return 10
+        return 10 //this is the default, could be omitted
     }
 
     func topPositionY(for parentHeight: CGFloat) -> CGFloat {

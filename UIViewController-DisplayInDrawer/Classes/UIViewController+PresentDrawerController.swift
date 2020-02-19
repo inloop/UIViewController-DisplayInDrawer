@@ -8,11 +8,11 @@ public protocol DrawerConfiguration: class {
     func middlePositionY(for parentHeight: CGFloat) -> CGFloat?
     func bottomPositionY(for parentHeight: CGFloat) -> CGFloat
     /**
-     Background color of the drawer controller. If value is nil, then light effect is applied to the background.Your controller must have clear background color. In case you need opaque controller background color, your controller still must have clear background color, but you supply your desired opaque background color in this method. If you do not implement this method, or if you return .clear color, the default iOS-like blurred background is created for you.
+     Optional. Background color of the drawer controller. In case you need opaque controller background color, your controller still must have clear background color, but you supply your desired opaque background color in this method. If you do not implement this method, or if you return .clear color, the default iOS-like blurred background is created for you.
      */
     var drawerBackgroundColor: UIColor { get }
     /**
-     Corner radius of the drawer controller. If you do not implement this method, the default iOS-like corner radius is applied with the value of 10.
+     Optional. Corner radius of the drawer controller. If you do not implement this method, the default iOS-like corner radius is applied with the value of 10.
      */
     var drawerCornerRadius: CGFloat { get }
     /**
@@ -60,7 +60,7 @@ extension UIViewController {
     public func displayInDrawer(_ controller: UIViewController & DrawerConfiguration, drawerPositionDelegate: DrawerPositionDelegate?) {
         let cornerRadius = controller.drawerCornerRadius
         ///How much blank space is inserted at bottom
-        let bottomOverpullPaddingHeight: CGFloat = 130
+        let bottomOverpullPaddingHeight: CGFloat = 200
         let containerView = view.addContainerView(
             for: controller,
             cornerRadius: cornerRadius,
@@ -269,14 +269,18 @@ private extension UIView {
          */
         let containerView = OutsideBoundsHittableView(frame: startFrame)
         containerView.preservesSuperviewLayoutMargins = true
+        containerView.layer.cornerRadius = cornerRadius
         addSubview(containerView)
-        containerView.backgroundColor = backgroundColor
-        let effect = UIBlurEffect(style: UIBlurEffectStyle.extraLight)
-        let containerEffectView = UIVisualEffectView(effect: effect)
-        containerEffectView.frame = containerView.bounds
-        containerEffectView.layer.cornerRadius = cornerRadius
-        containerEffectView.clipsToBounds = true
-        containerView.pinSubview(containerEffectView)
+        if backgroundColor == .clear {
+            let effect = UIBlurEffect(style: UIBlurEffectStyle.extraLight)
+            let containerEffectView = UIVisualEffectView(effect: effect)
+            containerEffectView.frame = containerView.bounds
+            containerEffectView.layer.cornerRadius = cornerRadius
+            containerEffectView.clipsToBounds = true
+            containerView.pinSubview(containerEffectView)
+        } else {
+            containerView.backgroundColor = backgroundColor
+        }
         return containerView
     }
 
