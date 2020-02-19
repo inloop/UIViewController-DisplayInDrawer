@@ -12,7 +12,7 @@
             <objects>
                 <navigationController id="PRA-r8-8Pj" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="yfm-sx-LBj">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -89,8 +89,8 @@
                                     <action selector="changeContentButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="VYf-DU-oi2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2iL-Zc-XPX">
-                                <rect key="frame" x="237" y="60" width="67" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2iL-Zc-XPX">
+                                <rect key="frame" x="237" y="59.5" width="67" height="30"/>
                                 <state key="normal" title="Pull down"/>
                                 <connections>
                                     <action selector="pullDownPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="uJN-WH-30G"/>
@@ -107,6 +107,7 @@
                             <constraint firstItem="gE4-qu-Fbg" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="C2y-IK-33N"/>
                             <constraint firstAttribute="trailingMargin" secondItem="9aL-bC-GCL" secondAttribute="trailing" id="C6x-nZ-IJW"/>
                             <constraint firstItem="hsr-oB-V4F" firstAttribute="top" secondItem="gE4-qu-Fbg" secondAttribute="bottom" constant="15" id="FEW-r5-nD2"/>
+                            <constraint firstItem="2iL-Zc-XPX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cye-0H-NTU" secondAttribute="trailing" constant="8" id="HaH-dx-xcX"/>
                             <constraint firstItem="2iL-Zc-XPX" firstAttribute="centerY" secondItem="cye-0H-NTU" secondAttribute="centerY" id="JC5-fs-kC1"/>
                             <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="L4w-pG-YSK" secondAttribute="trailing" constant="7" id="JuE-3v-kmg"/>
                             <constraint firstItem="L4w-pG-YSK" firstAttribute="centerY" secondItem="n2S-kO-F6i" secondAttribute="centerY" id="KnJ-r3-IaO"/>
@@ -126,6 +127,7 @@
                     <connections>
                         <outlet property="changeContentButton" destination="L4w-pG-YSK" id="uJ3-lV-Qhe"/>
                         <outlet property="presentInDrawerButton" destination="n2S-kO-F6i" id="duv-W5-jQx"/>
+                        <outlet property="pullDownButton" destination="2iL-Zc-XPX" id="uwh-k4-ath"/>
                         <outlet property="pushButton" destination="gE4-qu-Fbg" id="Ahy-0R-7iY"/>
                         <outlet property="useMiddlePositionSwitch" destination="cye-0H-NTU" id="7ww-jB-jah"/>
                     </connections>

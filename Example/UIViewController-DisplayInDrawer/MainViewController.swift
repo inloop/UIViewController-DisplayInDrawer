@@ -8,6 +8,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var useMiddlePositionSwitch: UISwitch!
     @IBOutlet weak var presentInDrawerButton: UIButton!
     @IBOutlet weak var pushButton: UIButton!
+    @IBOutlet weak var pullDownButton: UIButton!
 
     weak var drawerContentController: ContentViewController? {
         didSet {
@@ -55,6 +56,7 @@ class MainViewController: UIViewController {
             changeContentButton.isEnabled = false
             presentInDrawerButton.isEnabled = true
             pushButton.isEnabled = true
+            pullDownButton.isEnabled = false
         }
     }
 }
@@ -65,10 +67,12 @@ extension MainViewController: DrawerPositionDelegate {
     }
 
     func didMoveDrawerToMiddlePosition() {
+        pullDownButton.isEnabled = useMiddlePositionSwitch.isOn
         NSLog("did move drawer to middle position")
     }
 
     func didMoveDrawerToBasePosition() {
+        pullDownButton.isEnabled = false
         NSLog("did move drawer to base position")
     }
     

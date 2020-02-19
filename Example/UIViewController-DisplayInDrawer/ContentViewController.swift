@@ -117,7 +117,7 @@ extension ContentViewController: DrawerConfiguration {
     func bottomPositionY(for parentHeight: CGFloat) -> CGFloat {
         guard isViewLoaded else { return 0 }
         if useMiddlePosition {
-            return parentHeight - 18
+            return parentHeight - 18 - (UIApplication.shared.keyWindow?.safeAreaInsets.bottom ?? 0)
         } else {
             return halfOpenPositionY(for: parentHeight)
         }
