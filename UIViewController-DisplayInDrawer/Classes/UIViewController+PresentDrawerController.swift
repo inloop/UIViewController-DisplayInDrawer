@@ -8,6 +8,14 @@ public protocol DrawerConfiguration: class {
     func middlePositionY(for parentHeight: CGFloat) -> CGFloat?
     func bottomPositionY(for parentHeight: CGFloat) -> CGFloat
     /**
+     Optional. Background color of the drawer controller. In case you need opaque controller background color, your controller still must have clear background color, but you supply your desired opaque background color in this method. If you do not implement this method, or if you return .clear color, the default iOS-like blurred background is created for you.
+     */
+    var drawerBackgroundColor: UIColor { get }
+    /**
+     Optional. Corner radius of the drawer controller. If you do not implement this method, the default iOS-like corner radius is applied with the value of 10.
+     */
+    var drawerCornerRadius: CGFloat { get }
+    /**
      drawerDismissClosure is injected by this lib.
      You should not change it, and you should call it when user presses dismiss button in your content view controller.
      It will hide the drawer.
@@ -31,6 +39,15 @@ public protocol DrawerConfiguration: class {
     func setPanGestureTarget(_ target: Any, action: Selector)
 }
 
+extension DrawerConfiguration {
+    var drawerCornerRadius: CGFloat {
+        return 10
+    }
+    var drawerBackgroundColor: UIColor {
+        return .clear
+    }
+}
+
 public protocol DrawerPositionDelegate: class {
     func didMoveDrawerToTopPosition()
     func didMoveDrawerToMiddlePosition()
@@ -41,13 +58,14 @@ public protocol DrawerPositionDelegate: class {
 
 extension UIViewController {
     public func displayInDrawer(_ controller: UIViewController & DrawerConfiguration, drawerPositionDelegate: DrawerPositionDelegate?) {
-        let cornerRadius: CGFloat = 10
+        let cornerRadius = controller.drawerCornerRadius
         ///How much blank space is inserted at bottom
-        let bottomOverpullPaddingHeight: CGFloat = 130
+        let bottomOverpullPaddingHeight: CGFloat = 200
         let containerView = view.addContainerView(
-            for: controller, cornerRadius:
-            cornerRadius, bottomPaddingHeight:
-            bottomOverpullPaddingHeight
+            for: controller,
+            cornerRadius: cornerRadius,
+            bottomPaddingHeight: bottomOverpullPaddingHeight,
+            backgroundColor: controller.drawerBackgroundColor
         )
         /*
          Warning: when you add any decoration views, make sure, that their content is masked not to cover blur effect view.
@@ -241,7 +259,7 @@ extension UIViewController {
 }
 
 private extension UIView {
-    func addContainerView(for drawerConfiguration: DrawerConfiguration, cornerRadius: CGFloat, bottomPaddingHeight: CGFloat) -> UIView {
+    func addContainerView(for drawerConfiguration: DrawerConfiguration, cornerRadius: CGFloat, bottomPaddingHeight: CGFloat, backgroundColor: UIColor) -> UIView {
         var startFrame = bounds
         startFrame.size.height = bounds.height - drawerConfiguration.topPositionY(for: bounds.height) + bottomPaddingHeight
         startFrame.origin.y += bounds.height
@@ -251,13 +269,18 @@ private extension UIView {
          */
         let containerView = OutsideBoundsHittableView(frame: startFrame)
         containerView.preservesSuperviewLayoutMargins = true
+        containerView.layer.cornerRadius = cornerRadius
         addSubview(containerView)
-        let effect = UIBlurEffect(style: UIBlurEffectStyle.extraLight)
-        let containerEffectView = UIVisualEffectView(effect: effect)
-        containerEffectView.frame = containerView.bounds
-        containerEffectView.layer.cornerRadius = cornerRadius
-        containerEffectView.clipsToBounds = true
-        containerView.pinSubview(containerEffectView)
+        if backgroundColor == .clear {
+            let effect = UIBlurEffect(style: UIBlurEffectStyle.extraLight)
+            let containerEffectView = UIVisualEffectView(effect: effect)
+            containerEffectView.frame = containerView.bounds
+            containerEffectView.layer.cornerRadius = cornerRadius
+            containerEffectView.clipsToBounds = true
+            containerView.pinSubview(containerEffectView)
+        } else {
+            containerView.backgroundColor = backgroundColor
+        }
         return containerView
     }
 

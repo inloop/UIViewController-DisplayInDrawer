@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'UIViewController-DisplayInDrawer'
-  s.version          = '1.1.0'
+  s.version          = '1.2.0'
   s.summary          = 'Present any view controller easily in a drawer (iOS Maps style)'
 
 # This description is used to generate tags and improve search results.
